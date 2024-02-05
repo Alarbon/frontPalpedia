@@ -1,0 +1,44 @@
+@if (palEdit) {
+<app-edit-pal [pal]="selectedPal" (closeModal)="handleCloseModalEdit()"
+    (palEmit)="handlePalEmit($event)"></app-edit-pal>
+
+}
+@if (palDelete) {
+<!-- Componente padre -->
+<app-delete-pal [pal]="selectedPal" (confirmDelete)="handleConfirmDelete()"
+    (closeModal)="handleCloseModalDelete()"></app-delete-pal>
+
+
+}
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    @for (pal of pals; track $index) {
+    <div class="bg-gray-400 bg-opacity-25 m-4 p-6 rounded-xl shadow-xl">
+        <div class="flex flex-col md:flex-row items-center mb-4">
+            <img src="{{ pal.image }}" alt="{{ pal.name }}" class="max-h-48 mb-4 md:mb-0 md:mr-4 hover:cursor-pointer">
+            <div class="text-center md:text-left text-white w-full">
+                <div class="text-4xl font-bold mb-2 text-cyan-300 text-center">{{ pal.name }} <span
+                        class="text-3xl text-white">#{{pal.key }}</span></div>
+
+                <div class="mb-2 mt-4">
+                    <span class="text-yellow-400 text-lg ml-4">Types:</span>
+                    <span class="text-white rounded-full px-2 py-1 text-lg mr-2">{{ getTypes(pal.types) }}</span>
+                </div>
+                <div class="mb-2">
+                    <span class="text-yellow-400 text-lg ml-4">Drops:</span>
+                    <span class="text-white rounded-full px-2 py-1 text-lg mr-2">{{ getDrops(pal.drops) }}</span>
+
+                </div>
+            </div>
+        </div>
+        <div class="text-white mb-4 text-lg text-pretty">{{ pal.description }}</div>
+        <div class="flex justify-between">
+            <a href="{{ pal.wiki }}" target="_blank"
+                class="text-blue-400 hover:text-blue-500 hover:underline text-xl">Wiki</a>
+            <div>
+                <button class="btn btn-primary mr-4 text-white text-xl w-28" (click)="toggleEdit(pal)">Edit</button>
+                <button class="btn btn-error text-white text-xl w-28" (click)="toggleDelete(pal)">Delete</button>
+            </div>
+        </div>
+    </div>
+    }
+</div>

@@ -1,0 +1,17 @@
+<!-- DeleteConfirmationModalComponent -->
+<div class="fixed inset-0 z-50 flex items-center justify-center">
+    <!-- Background overlay -->
+    <div class="fixed inset-0 bg-black opacity-75"></div>
+
+    <!-- Modal container -->
+    <div class="bg-gray-800 text-white p-8 rounded-xl shadow-md z-10 min-w-[60vh]">
+        <!-- Modal content -->
+        <p class="text-xl mb-4">Are you sure to delete {{pal?.name}}?</p>
+
+        <!-- Buttons -->
+        <div class="flex justify-end ">
+            <button class="btn btn-error mr-4 text-white" (click)="deletePal()">DELETE</button>
+            <button class="btn btn-primary text-white" (click)="closeDeleteModal()">CANCEL</button>
+        </div>
+    </div>
+</div>

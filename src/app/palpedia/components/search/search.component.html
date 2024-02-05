@@ -1,0 +1,7 @@
+<!-- Buscador -->
+<div class=" w-96  m-auto">
+    <div class="form-control">
+        <input #name type="text" (keyup.enter)="emitValue(name.value)" (keyup)="onKeyPres(name.value)" type="text"
+            placeholder="Search Pal" class="input input-bordered w-full" />
+    </div>
+</div>

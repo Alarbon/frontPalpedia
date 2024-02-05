@@ -1,0 +1,6 @@
+<app-search (onValue)="getPals($event)" (onDebounce)="getPals($event)"></app-search>
+@if (pals) {
+<app-list-pals [pals]="pals!"></app-list-pals>
+}@else {
+<app-skeleton></app-skeleton>
+}

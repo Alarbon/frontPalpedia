@@ -1,0 +1,62 @@
+<body class="h-full">
+
+    <div class="container mx-auto mt-8">
+        <div class="max-w-md mx-auto">
+            <div class="bg-gray-600 bg-opacity-50 rounded-lg overflow-hidden shadow-xl">
+                <div class="p-6">
+                    <h2 class="text-3xl font-semibold mb-4 text-gray-100 text-center">Add a New Pal</h2>
+
+                    <form [formGroup]="myForm" class="space-y-4">
+                        <div class="form-group">
+                            <label for="image" class="block text-xl font-medium text-gray-300">Image URL</label>
+                            <input type="text"
+                                class="form-input mt-2 block w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                formControlName="image" placeholder="Insert image URL">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name" class="block text-xl font-medium text-gray-300">Name</label>
+                            <input type="text"
+                                class="form-input mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                formControlName="name" placeholder="Insert pal name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="wiki" class="block text-xl font-medium text-gray-300">Wiki URL</label>
+                            <input type="text"
+                                class="form-input mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                formControlName="wiki" placeholder="Insert wiki URL">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="types" class="block text-xl font-medium text-gray-300">Types</label>
+                            <input type="text"
+                                class="form-input mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                formControlName="types" placeholder="Insert types">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="drops" class="block text-xl font-medium text-gray-300">Drops</label>
+                            <input type="text"
+                                class="form-input mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                formControlName="drops" placeholder="Insert drops">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description" class="block text-xl font-medium text-gray-300">Description</label>
+                            <textarea type="text"
+                                class="form-input mt-1 block w-full px-4 py-2 border rounded-md focus:outline-none focus:border-blue-500"
+                                formControlName="description" placeholder="Insert description"></textarea>
+                        </div>
+
+                        <button class="btn btn-primary btn-block bg-purple-800 text-white hover:bg-purple-900"
+                            (click)="addPal()">Add Pal</button>
+                    </form>
+
+                    <hr class="my-4">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
